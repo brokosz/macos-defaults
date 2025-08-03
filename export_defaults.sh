@@ -6,6 +6,8 @@ dropbox_dir="$HOME/Dropbox/config/defaults"
 icloud_dir="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults"
 workdocs_dir="$HOME/Library/CloudStorage/WorkDocsDrive-Documents/config/defaults"
 box_dir="$HOME/Library/CloudStorage/Box-Box/config/defaults"  # Box.com default directory
+onedrive_dir="$HOME/Library/CloudStorage/OneDrive-Personal/config/defaults"  # OneDrive default directory
+mega_dir="$HOME/MEGAsync/config/defaults"  # Mega default directory
 
 # Flag for exporting modifier keys
 export_modifier_keys=false
@@ -18,6 +20,8 @@ function show_help {
     echo "  -i, --icloud         Use iCloud default output directory"
     echo "  -wd, --workdocs      Use WorkDocs default output directory"
     echo "  -b, --box            Use Box.com default output directory"
+    echo "  -od, --onedrive      Use OneDrive default output directory"
+    echo "  -mg, --mega          Use Mega default output directory"
     echo "  -m, --modifiers      Include keyboard modifier key settings"
     echo "  -h, --help           Show this help message"
     echo "If no option is provided, ~/.config/defaults will be used."
@@ -44,6 +48,14 @@ while [[ $# -gt 0 ]]; do
             ;;
         -b|--box)
             output_dir="$box_dir"
+            shift
+            ;;
+        -od|--onedrive)
+            output_dir="$onedrive_dir"
+            shift
+            ;;
+        -mg|--mega)
+            output_dir="$mega_dir"
             shift
             ;;
         -m|--modifiers)

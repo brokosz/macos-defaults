@@ -1,6 +1,6 @@
 # macOS Defaults Export/Import Scripts
 
-This repository contains two bash scripts to export and import macOS defaults (`plist`) files across different locations such as Dropbox, iCloud, Box, WorkDocs, or a custom directory. These scripts provide flexibility with various storage options or custom paths.
+This repository contains two bash scripts to export and import macOS defaults (`plist`) files across different locations such as Dropbox, iCloud, Box, WorkDocs, OneDrive, Mega, or a custom directory. These scripts provide flexibility with various storage options or custom paths.
 
 ## Scripts
 
@@ -75,6 +75,8 @@ The `export_defaults.sh` script exports macOS defaults to the specified director
 - `-i, --icloud` : Use iCloud default output directory (`~/Library/Mobile Documents/com~apple~CloudDocs/config/defaults`).
 - `-wd, --workdocs` : Use WorkDocs default output directory (`~/Library/CloudStorage/WorkDocsDrive-Documents/config/defaults`).
 - `-b, --box` : Use Box.com default output directory (`~/Library/CloudStorage/Box-Documents/config/defaults`).
+- `-od, --onedrive` : Use OneDrive default output directory (`~/Library/CloudStorage/OneDrive-Personal/config/defaults`).
+- `-mg, --mega` : Use Mega default output directory (`~/MEGAsync/config/defaults`).
 - `-h, --help` : Display help information.
 
 #### Example Usages:
@@ -87,6 +89,16 @@ The `export_defaults.sh` script exports macOS defaults to the specified director
 - Export to iCloud:
   ```bash
   ./export_defaults.sh -i
+  ```
+
+- Export to OneDrive:
+  ```bash
+  ./export_defaults.sh -od
+  ```
+
+- Export to Mega:
+  ```bash
+  ./export_defaults.sh -mg
   ```
 
 - Export to a custom directory (if it doesn’t exist, it will be created):
@@ -110,6 +122,8 @@ The `import_defaults.sh` script imports macOS defaults from `.plist` files in th
 - `-i, --icloud` : Use iCloud default input directory (`~/Library/Mobile Documents/com~apple~CloudDocs/config/defaults`).
 - `-wd, --workdocs` : Use WorkDocs default input directory (`~/Library/CloudStorage/WorkDocsDrive-Documents/config/defaults`).
 - `-b, --box` : Use Box.com default input directory (`~/Library/CloudStorage/Box-Documents/config/defaults`).
+- `-od, --onedrive` : Use OneDrive default input directory (`~/Library/CloudStorage/OneDrive-Personal/config/defaults`).
+- `-mg, --mega` : Use Mega default input directory (`~/MEGAsync/config/defaults`).
 - `-h, --help` : Display help information.
 
 #### Example Usages:
@@ -122,6 +136,26 @@ The `import_defaults.sh` script imports macOS defaults from `.plist` files in th
 - Import from iCloud:
   ```bash
   ./import_defaults.sh -i
+  ```
+
+- Import from OneDrive:
+  ```bash
+  ./import_defaults.sh -od
+  ```
+
+- Import from Mega:
+  ```bash
+  ./import_defaults.sh -mg
+  ```
+
+- Import from OneDrive:
+  ```bash
+  ./import_defaults.sh -od
+  ```
+
+- Import from Mega:
+  ```bash
+  ./import_defaults.sh -mg
   ```
 
 - Import from a custom directory:
